@@ -32,7 +32,7 @@
 		</div>
 
 	</c:if>
-	<section class="container">
+	<section class="container" id="secao-ingredientes">
 	<jsp:include page="tabela-ingredientes.jsp"></jsp:include>
 	</section>
 	<jsp:include page="modal-ingrediente.jsp" />
