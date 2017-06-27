@@ -25,8 +25,7 @@ public class Ingrediente {
 	private String nome;
 	
 	@NotNull
-	@Enumerated(EnumType.STRING)
-	
+	@Enumerated(EnumType.STRING)	
 	private CategoriaDeIngrediente categoria;
 	
 	public Long getId() {

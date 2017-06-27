@@ -13,6 +13,7 @@ public final class listagem_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_forEach_var_items;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_set_var_value_scope_nobody;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_if_test;
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -23,11 +24,13 @@ public final class listagem_jsp extends org.apache.jasper.runtime.HttpJspBase
   public void _jspInit() {
     _jspx_tagPool_c_forEach_var_items = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_set_var_value_scope_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_if_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
     _jspx_tagPool_c_forEach_var_items.release();
     _jspx_tagPool_c_set_var_value_scope_nobody.release();
+    _jspx_tagPool_c_if_test.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -81,6 +84,13 @@ public final class listagem_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</style>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
+      if (_jspx_meth_c_if_0(_jspx_page_context))
+        return;
+      out.write("\r\n");
+      out.write("\r\n");
+      if (_jspx_meth_c_if_1(_jspx_page_context))
+        return;
+      out.write("\r\n");
       out.write("\t<section class=\"container\">\r\n");
       out.write("\t\t<table\r\n");
       out.write("\t\t\tclass=\"table table-houver table-condensed table-striped table-bordered \">\r\n");
@@ -92,6 +102,7 @@ public final class listagem_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t</tr>\r\n");
       out.write("\t\t\t</thead>\r\n");
       out.write("\t\t\t<tbody>\r\n");
+      out.write("\t\t\r\n");
       out.write("\t\t\t\t");
       if (_jspx_meth_c_forEach_0(_jspx_page_context))
         return;
@@ -100,15 +111,31 @@ public final class listagem_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t</tbody>\r\n");
       out.write("\t\t\t<tfoot>\r\n");
       out.write("\t\t\t\t<tr>\r\n");
-      out.write("\t\t\t\t\t<td colspan=\"3\">Ingredientes cadastrados:\r\n");
-      out.write("\t\t\t\t\t\t");
+      out.write("\t\t\t\t\t<td colspan=\"3\">Ingredientes cadastrados:");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${ingredientes.size()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("</td>\r\n");
       out.write("\t\t\t\t</tr>\r\n");
+      out.write("\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t<td colspan=\"3\">\r\n");
+      out.write("\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#modal-ingrediente\">\r\n");
+      out.write("\t\t\t\t\t\t\tCadastrar Ingrediente\r\n");
+      out.write("\t\t\t\t\t\t</button>\r\n");
+      out.write("\r\n");
+      out.write("\t\t\t\t\t</td>\r\n");
+      out.write("\t\t\t\t</tr>\r\n");
+      out.write("\r\n");
       out.write("\t\t\t</tfoot>\r\n");
       out.write("\t\t</table>\r\n");
       out.write("\t</section>\r\n");
+      out.write("\t");
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "modal-ingrediente.jsp", out, false);
       out.write("\r\n");
+      out.write("\t<script type=\"text/javascript\" src=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${path}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("/static/js/jquery-3.2.1.min.js\" ></script>\r\n");
+      out.write("\t<script type=\"text/javascript\" src=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${path}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("/static/bootstrap/js/bootstrap.min.js\" ></script>\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {
@@ -141,6 +168,70 @@ public final class listagem_jsp extends org.apache.jasper.runtime.HttpJspBase
       return true;
     }
     _jspx_tagPool_c_set_var_value_scope_nobody.reuse(_jspx_th_c_set_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_if_0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_0.setParent(null);
+    _jspx_th_c_if_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${not empty mensagemErro }", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
+    if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("\t<div class=\"container\">\r\n");
+        out.write("\t\t<div class=\"alert alert-danger\">");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${mensagemErro}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write("</div>\r\n");
+        out.write("\t</div>\r\n");
+        out.write("\r\n");
+        int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_if_1(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_1 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_1.setParent(null);
+    _jspx_th_c_if_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${not empty mensagemInfo }", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_1 = _jspx_th_c_if_1.doStartTag();
+    if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("\t<div class=\"container\">\r\n");
+        out.write("\t\t<div class=\"alert alert-info\">");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${mensagemInfo}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write("</div>\r\n");
+        out.write("\t</div>\r\n");
+        out.write("\r\n");
+        int evalDoAfterBody = _jspx_th_c_if_1.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
     return false;
   }
 

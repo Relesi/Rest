@@ -10,15 +10,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>${titulo}</title>
+<c:set var="path" value="${pageContext.request.contextPath}"
+	scope="request" />
+<style type="text/css">
+@IMPORT url("${path}/static/bootstrap/css/bootstrap.min.css");
 
-	<style type="text/css">
-	@IMPORT url("/rest/static/bootstrap/css/bootstrap.mim.css");	
-	@IMPORT url("/rest/static/bootstrap/css/bootstrap-theme.mim.css");
-	</style>
+@IMPORT url("${path}/static/bootstrap/css/bootstrap-theme.min.css");
+</style>
 </head>
 <body>
-	<section>
-		<table class="table table-houver table-condensed table-striped table-bordered ">
+<c:if test="${not empty mensagemErro }">
+	<div class="container">
+		<div class="alert alert-danger">${mensagemErro}</div>
+	</div>
+
+</c:if>
+	<section class="container">
+		<table
+			class="table table-houver table-condensed table-striped table-bordered ">
 			<thead>
 				<tr>
 					<td>Id</td>
@@ -27,23 +36,34 @@
 				</tr>
 			</thead>
 			<tbody>
+		
 				<c:forEach items="${ingredientes}" var="ingrediente">
 					<tr>
 						<td>${ingrediente.id}</td>
 						<td>${ingrediente.nome}</td>
 						<td>${ingrediente.categoria}</td>
-				</tr>
+					</tr>
 				</c:forEach>
-			
+
 			</tbody>
 			<tfoot>
 				<tr>
-					<td colspan="3">Ingredientes cadastrados:
-						${ingredientes.size()}</td>
+					<td colspan="3">Ingredientes cadastrados:${ingredientes.size()}</td>
 				</tr>
+				<tr>
+					<td colspan="3">
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-ingrediente">
+							Cadastrar Ingrediente
+						</button>
+
+					</td>
+				</tr>
+
 			</tfoot>
 		</table>
 	</section>
-
+	<jsp:include page="modal-ingrediente.jsp" />
+	<script type="text/javascript" src="${path}/static/js/jquery-3.2.1.min.js" ></script>
+	<script type="text/javascript" src="${path}/static/bootstrap/js/bootstrap.min.js" ></script>
 </body>
 </html>
