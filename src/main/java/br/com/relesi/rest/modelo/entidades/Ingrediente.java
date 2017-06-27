@@ -1,5 +1,6 @@
 package br.com.relesi.rest.modelo.entidades;
 
+
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -25,6 +26,7 @@ public class Ingrediente {
 	
 	@NotNull
 	@Enumerated(EnumType.STRING)
+	
 	private CategoriaDeIngrediente categoria;
 	
 	public Long getId() {

@@ -20,7 +20,7 @@ public class RestController {
 	@ResponseBody
 	public String quantasPizzas(){
 		
-		return "Atualmente há "  +pizzaRepositorio.count()+ " cadastradas!!!";
+		return "Atualmente há "  +pizzaRepositorio.count()+ " cadastradas!!! -> corrigir erro de string em categorias no banco";
 	}
 
 	
