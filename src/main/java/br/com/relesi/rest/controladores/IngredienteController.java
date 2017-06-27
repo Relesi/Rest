@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import br.com.relesi.rest.excecoes.IngredienteInvalidoException;
 import br.com.relesi.rest.modelo.entidades.Ingrediente;
 import br.com.relesi.rest.modelo.enumeracoes.CategoriaDeIngrediente;
 import br.com.relesi.rest.modelo.repositorios.IngredienteRepositorio;
@@ -34,20 +35,20 @@ public class IngredienteController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String salvarIngrediente(@Valid @ModelAttribute Ingrediente ingrediente, BindingResult bindingResult,
-			RedirectAttributes redirectAttributes) {
+	public String salvarIngrediente(
+			@Valid @ModelAttribute Ingrediente ingrediente, 
+			BindingResult bindingResult, Model model) {
 
 		if (bindingResult.hasErrors()) {
-			FieldError error = bindingResult.getFieldErrors().get(0);
-			redirectAttributes.addFlashAttribute("mensagemErro",
-					"Não foi possível salvar o ingrediente" + error.getField() + " " + error.getDefaultMessage());
+			throw new IngredienteInvalidoException();
 		} else {
 
 			ingredienteRepositorio.save(ingrediente);
-			redirectAttributes.addFlashAttribute("mensagemInfo",
-					"O ingrediente foi salvo corretamente" );
+
 		}
 
-		return "redirect:/app/ingredientes";
+		model.addAttribute("ingredientes", ingredienteRepositorio.findAll());
+		model.addAttribute("categorias", CategoriaDeIngrediente.values());
+		return "ingrediente/tabela-ingredientes";
 	}
 }
