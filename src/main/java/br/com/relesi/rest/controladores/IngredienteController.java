@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.relesi.rest.excecoes.IngredienteInvalidoException;
@@ -26,6 +27,7 @@ public class IngredienteController {
 
 	@Autowired
 	private IngredienteRepositorio ingredienteRepositorio;
+	private Ingrediente findOne;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String listarIngredientes(Model model) {
@@ -59,5 +61,12 @@ public class IngredienteController {
 			
 			return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
 		}
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value="/{id}")
+	@ResponseBody
+	public Ingrediente buscarIngrediente(@PathVariable Long id){
+		Ingrediente ingrediente = ingredienteRepositorio.findOne(id);
+		return ingrediente;
 	}
 }
