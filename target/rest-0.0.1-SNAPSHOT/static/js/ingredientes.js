@@ -3,18 +3,31 @@ $(document).ready(function() {
 		aplicarListeners();
 	});
 
-var aplicarListeners = function() {
-	$('.btn-editar').on('click', function(){
-		var id = $(this).parents('tr').data('id');
-		var url = 'ingredientes/'+id;
-		$.get(url)
-		.success(function(ingrediente){
-			$('#nome').val(ingrediente.nome);
-			$('#categoria').val(ingrediente.categoria);
+var limparModal = function(){
+	
+	$('#id').val('');
+	$('#nome').val('');
+	$('#categoria').val('');
+}
+
+
+	var aplicarListeners = function(){
+		$('#modal-ingrediente').on('hide.bs.modal', limparModal)
+		$('.btn-editar').on('click', function(){
+			var id = $(this).parents('tr').data('id');
+			var url = 'ingredientes/'+id;
 			
-			$('#modal-ingrediente').modal|('show');
+			$.get(url)
+			.done(function(ingrediente){
+				$('#id').val(ingrediente.id);
+				$('#nome').val(ingrediente.nome);
+				$('#categoria').val(ingrediente.categoria);
+				
+				$('#modal-ingrediente').modal('show');
+				
+			});
 		});
-	});
+	
 	
 	
 	

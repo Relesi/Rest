@@ -80,7 +80,7 @@ public final class modal_002dingrediente_jsp extends org.apache.jasper.runtime.H
       out.write("\r\n");
       out.write("\t\t\t\t\t\t\r\n");
       out.write("\t\t\t\t\t\t</select>\r\n");
-      out.write("\t\t\t\t\t\t\r\n");
+      out.write("\t\t\t\t\t\t<input id=\"id\" name=\"id\" type=\"hidden\">\r\n");
       out.write("\t\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t\t<div class=\"modal-footer\">\r\n");
       out.write("\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Cancelar</button>\r\n");

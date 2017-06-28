@@ -27,7 +27,7 @@
 						</c:forEach>
 						
 						</select>
-						
+						<input id="id" name="id" type="hidden">
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
