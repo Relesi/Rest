@@ -98,9 +98,10 @@ public final class listagem_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "modal-ingrediente.jsp", out, false);
       out.write("\r\n");
+      out.write("\t\r\n");
       out.write("\t<script type=\"text/javascript\"src=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${path}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/static/js/jquery-3.2.1.min.js\"></script>\r\n");
+      out.write("/static/js/jquery-3.2.1.min.js\"></script>\t\t\r\n");
       out.write("\t<script type=\"text/javascript\"src=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${path}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("/static/bootstrap/js/bootstrap.min.js\"></script>\r\n");

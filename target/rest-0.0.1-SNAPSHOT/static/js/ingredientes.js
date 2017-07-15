@@ -48,9 +48,9 @@ var limparModal = function(){
 		
 		$('#btn-salvar').on('click', function() {
 			var url = 'ingredientes';
-			var daodsIngrediente = $('#form-ingrediente').serialize();
+			var dadosIngrediente = $('#form-ingrediente').serialize();
 		
-			$.post(url, daodsIngrediente)
+			$.post(url, dadosIngrediente)
 			.done(function(pagina) {
 				$('#secao-ingredientes').html(pagina);
 				aplicarListeners();
