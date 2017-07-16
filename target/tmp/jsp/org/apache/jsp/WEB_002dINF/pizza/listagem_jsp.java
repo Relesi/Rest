@@ -104,10 +104,9 @@ public final class listagem_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("\t\t\t\r\n");
-      out.write("\t\t\r\n");
-      out.write("\t\t<script type=\"text/javascript\"src=\"");
+      out.write("\t\t<script type=\"text/javascript\" src=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${path}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/static/js/jquery-3.2.1.min.js\"></script>\t\t\t\t\r\n");
+      out.write("/static/js/jquery-2.1.3.min.js\"></script>\t\r\n");
       out.write("\t\t<script type=\"text/javascript\"src=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${path}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("/static/bootstrap/js/bootstrap.min.js\"></script>\r\n");

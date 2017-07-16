@@ -23,13 +23,21 @@
 						<label for="nome">Preço: </label>
 						<input id="preco" name="preco" class="form-control"> 
 						
-						<label for="categoria">Categoria</label>
+						<label for="categoria">Categoria:</label>
 						<select id="categoria" name="categoria" class="form-control">
 						<c:forEach items="${categorias}" var="categoria">
 							<option value="${categoria}">${categoria}</option>						
-						</c:forEach>
-						
+						</c:forEach>						
 						</select>
+						
+						<label for="ingredientes">Ingredientes</label>
+						<select id="ingredientes" name="ingredientes" class="form-control" multiple="multiple">
+						<c:forEach items="${ingredientes}" var="ingrediente">
+							<option value="${ingrediente.id}">${ingrediente.nome}</option>						
+						</c:forEach>						
+						</select>
+						
+						
 						<input id="id" name="id" type="hidden">
 					</div>
 					<div class="modal-footer">

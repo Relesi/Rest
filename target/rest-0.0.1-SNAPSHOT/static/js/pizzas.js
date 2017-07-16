@@ -1,6 +1,9 @@
+
+
 $(document).ready(function(){
 	
 	aplicarListeners();
+	
 	
 });
 	
@@ -9,7 +12,7 @@ var aplicarListeners = function(){
 	
 	$('#btn-salvar').on('click', function(){
 		var url = 'pizzas';
-		var dadosIngrediente = $('#form-ingrediente').serialize();
+		var dadosIngrediente = $('#form-pizza').serialize();
 		
 		$.post(url, dadosIngrediente)
 			.done(function(pagina){

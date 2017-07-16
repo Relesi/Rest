@@ -24,12 +24,12 @@ public class Aplicacao implements WebApplicationInitializer {
 		
 	    Dynamic appServlet = servletContext.addServlet("appServlet", new DispatcherServlet(webApplicationContext));
 		appServlet.setLoadOnStartup(1);
-		appServlet.addMapping("/app/");
+		appServlet.addMapping("/app/*");
 		
 		servletContext.addListener(new ContextLoaderListener(webApplicationContext));
 		
 		FilterRegistration.Dynamic filter = servletContext.addFilter("openEntityManagerFilter ", buildOpenEntityManagerFilter());
-		filter.addMappingForUrlPatterns(getDispatcherTypes(), false, "/app/");
+		filter.addMappingForUrlPatterns(getDispatcherTypes(), false, "/app/*");
 	}
 	
 	private OpenEntityManagerInViewFilter buildOpenEntityManagerFilter() {
